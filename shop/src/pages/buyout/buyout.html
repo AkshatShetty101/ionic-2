@@ -4,5 +4,9 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-
+<h2>Your Order</h2>
+  <p>Product Name: {{ productData.name }}</p>
+  <p>Product Quantity: {{ productData.quantity }}</p>
+  <hr>
+  <button ion-button (click)="onPurchase()">Buy</button>
 </ion-content>
