@@ -15,7 +15,10 @@ export class QuotesPage implements OnInit{
   ngOnInit(){
     this.quotegroup = this.navParams.data;
   }
-  onAddToFavourite(q:quote){
+  onRemoveFromFavourites(q : quote){
+    this.quoteService.removeQuoteDromFavourite(q);
+  }
+  onAddToFavourites(q:quote){
     console.log(q);
     const alert = this.alertCtrl.create({
       title : 'Add Quote',

@@ -22,8 +22,18 @@
           ion-button
           clear
           small
-          (click)="onAddToFavourite(q)">
+          (click)="onAddToFavourites(q)"
+          *ngIf="!quoteService.findDuplicate(q)">
           Favourite
+        </button>
+        <button
+          ion-button
+          clear
+          small
+          color="danger"
+          (click)="onRemoveFromFavourites (q)"
+          *ngIf="quoteService.findDuplicate(q)">
+          Unfavourite
         </button>
       </ion-col>
     </ion-row>

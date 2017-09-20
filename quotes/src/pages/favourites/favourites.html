@@ -8,9 +8,22 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let q of favquotes">
-      <h2> {{ q.person}} </h2>
-      <p> {{ q.text}} </p>
-    </ion-item>
+    <ion-item-sliding
+      *ngFor="let q of favquotes">
+      <ion-item
+        (click)="onViewQuote(q)">
+        <h2> {{ q.person}} </h2>
+        <p> {{ q.text}} </p>
+      </ion-item>
+      <ion-item-options>
+        <button
+          ion-button
+          color="danger"
+          (click)="onRemoveFromFavourites(q)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>

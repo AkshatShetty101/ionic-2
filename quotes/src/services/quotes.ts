@@ -31,7 +31,7 @@ export class QuotesService {
     this.favouriteQuotes.splice(position,1);
   }
 
-  getFavoutiteQuotes(){
+  getFavouriteQuotes(){
     return this.favouriteQuotes.slice();
   }
 }
