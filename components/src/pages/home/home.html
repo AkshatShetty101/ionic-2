@@ -7,5 +7,56 @@
 </ion-header>
 
 <ion-content padding>
-<button (click)="onClick()">Normal button</button>
+  <app-touch-event></app-touch-event>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 offset-1>A column</ion-col>
+      <ion-col>A second column</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offset-2>row 2</ion-col>
+    </ion-row>
+  </ion-grid>
+  <button ion-button
+          color="secondary"
+          (click)="onClick()"
+  >Normal button</button>
+  <button ion-button
+          outline
+          (click)="onClick()"
+  >Normal button</button>
+
+  <button ion-button
+          clear
+          (click)="onClick()"
+  >Normal button</button>
+  <button ion-button
+          round
+          block
+          (click)="onClick()"
+          icon-left
+  ><ion-icon name="home"></ion-icon>Home</button>
+  <br>
+
+  <ion-item-group>
+    <ion-item-divider>A</ion-item-divider>
+    <ion-item>Apples</ion-item>
+    <ion-item>Avocados</ion-item>
+    <ion-item-divider>B</ion-item-divider>
+    <ion-item>Bananas</ion-item>
+    <ion-item>Berries</ion-item>
+  </ion-item-group>
+  <ion-list>
+    <ion-list-header>head</ion-list-header>
+    <ion-item>Tracking</ion-item>
+    <ion-item>Personal Images</ion-item>
+  </ion-list>
+  <ion-list no-lines inset>
+    <ion-item>
+      <ion-icon name="star" item-right></ion-icon>
+      <h4>head</h4>
+      <p>Normal Item</p></ion-item>
+    <button ion-item>Button Item</button>
+  </ion-list>
+
 </ion-content>
