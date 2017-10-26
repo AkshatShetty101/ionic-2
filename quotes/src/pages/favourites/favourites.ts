@@ -13,9 +13,11 @@ export class FavouritesPage {
   constructor(private quoteService: QuotesService,
               private modalCtrl : ModalController,
               private settingsService : SettingsService){}
+
   ionViewWillEnter(){
     this.favquotes = this.quoteService.getFavouriteQuotes();
   }
+
   onViewQuote(q: quote){
     const modal = this.modalCtrl.create(QuotePage, q);
     modal.present();

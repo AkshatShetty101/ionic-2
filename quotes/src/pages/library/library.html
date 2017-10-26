@@ -14,15 +14,17 @@
 
 
 <ion-content padding>
-  <h3 text-center>Select your favourite quote</h3>
-  <ion-list>
-    <button
-      ion-item
-      *ngFor="let q of quoteCollection"
-      [navPush] = "qp" [navParams] = "q">
-      <ion-icon item-left name="{{q.icon}}"></ion-icon>
-      <h2>{{ q.category | uppercase }}</h2>
-      <p>{{q.quotes.length}} Quotes</p>
-    </button>
-  </ion-list>
+  <div  *ngIf="quoteCollection">
+    <h3 text-center>Select your favourite quote</h3>
+    <ion-list>
+      <button
+        ion-item
+        *ngFor="let q of quoteCollection"
+        [navPush] = "qp" [navParams] = "q">
+        <ion-icon item-left name="{{q.icon}}"></ion-icon>
+        <h2>{{ q.category | uppercase }}</h2>
+        <p>{{q.quotes.length}} Quotes</p>
+      </button>
+    </ion-list>
+  </div>
 </ion-content>
