@@ -7,12 +7,12 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-card *ngFor="let q of quotegroup.quotes; let i = index">
+<ion-content padding [ngClass]="{back : isAltBackground()}">
+  <ion-card [ngClass]="{other : isAltBackground()}" *ngFor="let q of quotegroup.quotes; let i = index">
     <ion-card-header>
       <p text-center># {{ i + 1 }} {{ q.person }}</p>
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content >
       <p>{{ q.text }}</p>
       <p class="author">{{ q.person }}</p>
     </ion-card-content>

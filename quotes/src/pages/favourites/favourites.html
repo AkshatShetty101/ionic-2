@@ -12,7 +12,7 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding [ngClass]="{back : isAltBackground()}">
   <ion-list>
     <ion-item-sliding
       *ngFor="let q of favquotes">

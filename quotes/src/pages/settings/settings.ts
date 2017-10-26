@@ -14,4 +14,8 @@ export class SettingsPage {
   checkAltBackground(){
     return this.settingsService.isAltBackground();
   }
+
+  isAltBackground() {
+    return this.settingsService.isAltBackground();
+  }
 }

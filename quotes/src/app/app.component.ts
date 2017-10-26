@@ -5,6 +5,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import firebase from 'firebase';
 import {TabsPage} from "../pages/tabs/tabs";
 import {SettingsPage} from "../pages/settings/settings";
+import { SettingsService } from '../services/settings'
 @Component({
   templateUrl: 'app.html'
 })
@@ -16,7 +17,8 @@ export class MyApp {
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
-              private menuCtrl: MenuController) {
+              private menuCtrl: MenuController,
+              private settingsService: SettingsService) {
     firebase.initializeApp({
         apiKey: "AIzaSyCAsejYYKRa27mmnLgDKD78GpPbVJefls0",
         authDomain: "quotodian.firebaseapp.com",
@@ -32,6 +34,10 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  isAltBackground() {
+    return this.settingsService.isAltBackground();
   }
 
   onLoad(page: any) {

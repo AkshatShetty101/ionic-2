@@ -1,3 +1,8 @@
 page-library {
-
+  .back{
+    background-color: color($colors, dark);
+  }
+  .other{
+    background-color: color($colors, altQuoteBackground);
+  }
 }

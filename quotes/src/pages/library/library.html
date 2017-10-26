@@ -13,12 +13,13 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding [ngClass]="{back : isAltBackground()}">
   <div  *ngIf="quoteCollection">
     <h3 text-center>Select your favourite quote</h3>
     <ion-list>
       <button
         ion-item
+        [ngClass]="{other : isAltBackground()}"
         *ngFor="let q of quoteCollection"
         [navPush] = "qp" [navParams] = "q">
         <ion-icon item-left name="{{q.icon}}"></ion-icon>
